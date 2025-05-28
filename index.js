@@ -6,13 +6,10 @@ app.set('view engine', 'hbs');
 app.set('views', './views');
 
 app.get('/', (request, response) => {
-    let resultado = [];
-
-    let a = 0, b = 1;
+    let resultado = [0, 1];
  
-    for(let cont = 1; cont <= 20; cont++){
-        resultado.push(a);
-        [a,b] = [b, a + b]
+    for(let cont = 2; cont <= 20; cont++){
+        resultado.push(resultado [cont - 1] + resultado[cont - 2]);
     }
     response.render('home', {valores : resultado});
 });
