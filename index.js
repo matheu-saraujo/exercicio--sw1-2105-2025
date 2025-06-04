@@ -5,6 +5,8 @@ const app = express()
 app.set('view engine', 'hbs');
 app.set('views', './views');
 
+app.use(express.static('public'))
+
 app.get('/', (request, response) => {
     let resultado = [0, 1];
  
